@@ -50,7 +50,7 @@ function ArmRig({ mouse }: { mouse: React.MutableRefObject<{ x: number; y: numbe
   });
 
   return (
-    <group position={[0, -1.4, 0]}>
+    <group position={[0, 0, 0]}>
       <group ref={baseRef}>
         {/* Base — flat cylinder on the floor */}
         <mesh position={[0, 0.15, 0]}>
@@ -161,14 +161,10 @@ export function RoboticArm() {
         mouse.current.y = 0;
       }}
     >
-      <Suspense
-        fallback={
-          <ArmSilhouette className="w-full h-full flex items-center justify-center" />
-        }
-      >
+      <Suspense fallback={<ArmSilhouette />}>
         <Canvas
-          camera={{ position: [3.5, 2, 4.5], fov: 35 }}
-          onCreated={({ camera }) => camera.lookAt(0, 1.8, 0)}
+          camera={{ position: [4, 3.5, 6], fov: 35 }}
+          onCreated={({ camera }) => camera.lookAt(0, 1.6, 0)}
           dpr={[1, 2]}
           gl={{ antialias: true, alpha: true }}
           style={{ background: "transparent" }}

@@ -8,9 +8,7 @@ const RoboticArm = dynamic(
   () => import("./RoboticArm").then((m) => m.RoboticArm),
   {
     ssr: false,
-    loading: () => (
-      <ArmSilhouette className="w-full h-full flex items-center justify-center" />
-    ),
+    loading: () => <ArmSilhouette />,
   },
 );
 
@@ -26,11 +24,11 @@ export function RoboticArmClient() {
   }, []);
 
   if (isDesktop === null) {
-    return <ArmSilhouette className="w-full h-full flex items-center justify-center" />;
+    return <ArmSilhouette />;
   }
 
   if (!isDesktop) {
-    return <ArmSilhouette className="w-full h-full flex items-center justify-center" />;
+    return <ArmSilhouette />;
   }
 
   return <RoboticArm />;
