@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { SectionLabel } from "../ui/SectionLabel";
 import { MarqueeRow } from "../ui/MarqueeRow";
 import { hobbies } from "@/content/hobbies";
@@ -25,14 +26,24 @@ export function Fun() {
               key={h.id}
               className="group relative shrink-0 w-[280px] md:w-[360px] aspect-[3/4] rounded-2xl overflow-hidden"
             >
-              {/* image placeholder fills the card */}
-              <div className="noise absolute inset-0 bg-surface-2 ring-1 ring-accent/30">
-                <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-                  <span className="font-mono text-xs uppercase tracking-[0.25em] text-subtle-foreground/70">
-                    {h.title}
-                  </span>
-                </div>
-              </div>
+              {/* image if available, otherwise placeholder */}
+                {h.image ? (
+                  <Image
+                    src={h.image}
+                    alt={h.title}
+                    fill
+                    sizes="(max-width: 768px) 280px, 360px"
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="noise absolute inset-0 bg-surface-2 ring-1 ring-accent/30">
+                    <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+                      <span className="font-mono text-xs uppercase tracking-[0.25em] text-subtle-foreground/70">
+                        {h.title}
+                      </span>
+                    </div>
+                  </div>
+                )}
               {/* corner ticks */}
               <span className="absolute top-3 left-3 w-3 h-px bg-accent/60 z-10" />
               <span className="absolute top-3 left-3 h-3 w-px bg-accent/60 z-10" />
@@ -79,16 +90,28 @@ export function Fun() {
               key={t.id}
               className="snap-start shrink-0 w-[280px] md:w-[340px] rounded-2xl overflow-hidden border border-border bg-surface-1 card-hover-glow"
             >
-              <div className="noise relative w-full aspect-[4/3] bg-surface-2 ring-1 ring-accent/30">
-                <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
-                  <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-subtle-foreground">
-                    {t.destination}
-                  </span>
-                </div>
-                <span className="absolute top-2 left-2 w-2 h-px bg-accent/60" />
-                <span className="absolute top-2 left-2 h-2 w-px bg-accent/60" />
-                <span className="absolute bottom-2 right-2 w-2 h-px bg-accent/60" />
-                <span className="absolute bottom-2 right-2 h-2 w-px bg-accent/60" />
+              <div className="relative w-full aspect-[4/3] overflow-hidden">
+                {t.image ? (
+                  <Image
+                    src={t.image}
+                    alt={t.destination}
+                    fill
+                    sizes="(max-width: 768px) 280px, 340px"
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="noise absolute inset-0 bg-surface-2 ring-1 ring-accent/30">
+                    <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.22em] text-subtle-foreground">
+                        {t.destination}
+                      </span>
+                    </div>
+                  </div>
+                )}
+                <span className="absolute top-2 left-2 w-2 h-px bg-accent/60 z-10" />
+                <span className="absolute top-2 left-2 h-2 w-px bg-accent/60 z-10" />
+                <span className="absolute bottom-2 right-2 w-2 h-px bg-accent/60 z-10" />
+                <span className="absolute bottom-2 right-2 h-2 w-px bg-accent/60 z-10" />
               </div>
               <div className="p-5">
                 <h4 className="text-lg md:text-xl font-medium tracking-[-0.01em] text-foreground leading-tight">

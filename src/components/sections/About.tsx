@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SectionLabel } from "../ui/SectionLabel";
 
 export function About() {
@@ -14,11 +15,14 @@ export function About() {
               className="noise relative rounded-2xl bg-surface-2 ring-1 ring-accent/40 w-[260px] md:w-[320px] aspect-square mx-auto lg:mx-0 overflow-hidden"
               aria-label="Portrait placeholder"
             >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="font-mono text-3xl tracking-[0.2em] text-subtle-foreground">
-                  JM
-                </span>
-              </div>
+              <Image
+                src="/images/portrait.jpg"
+                alt="Jayendra Mandradiar"
+                fill
+                sizes="(max-width: 768px) 260px, 320px"
+                className="object-cover"
+                priority
+              />
               <span className="absolute top-3 left-3 w-3 h-px bg-accent/60" />
               <span className="absolute top-3 left-3 h-3 w-px bg-accent/60" />
               <span className="absolute bottom-3 right-3 w-3 h-px bg-accent/60" />

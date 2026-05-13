@@ -25,7 +25,7 @@ export function Awards() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {awards.map((a, i) => (
-              <BadgeCard key={a.id} title={a.title} context={a.context} index={i} />
+              <BadgeCard key={a.id} title={a.title} context={a.context} image={a.image} index={i} />
             ))}
           </div>
         </div>
@@ -41,7 +41,7 @@ export function Awards() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {certifications.map((c, i) => (
-              <BadgeCard key={c.id} title={c.title} context={c.context} index={i} />
+              <BadgeCard key={c.id} title={c.title} context={c.context} image={c.image} index={i} />
             ))}
           </div>
         </div>
