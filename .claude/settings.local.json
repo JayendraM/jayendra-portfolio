@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); console.log\\('Linkedin' in l, 'Instagram' in l, 'Mail' in l\\);\")",
+      "Bash(npm view *)",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); const wanted = ['Linkedin', 'LinkedIn', 'Instagram', 'Mail', 'Github']; wanted.forEach\\(n => console.log\\(n, n in l\\)\\); console.log\\('--- searching for linked/insta:'\\); Object.keys\\(l\\).filter\\(k => /link|insta/i.test\\(k\\)\\).slice\\(0,20\\).forEach\\(k => console.log\\(k\\)\\);\")",
+      "Bash(node -e \"const l = require\\('lucide-react'\\); console.log\\('Linkedin' in l, 'Instagram' in l, 'Mail' in l, 'Github' in l\\);\")",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"HOME %{http_code}\\\\n\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"P1 %{http_code}\\\\n\" http://localhost:3000/projects/nozzle-force-bed-leveling)",
+      "Bash(curl -s -o /dev/null -w \"P2 %{http_code}\\\\n\" http://localhost:3000/projects/6-axis-robotic-printer)",
+      "Bash(curl -s -o /dev/null -w \"3000=%{http_code} \" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"3001=%{http_code}\\\\n\" http://localhost:3001/)",
+      "Bash(curl -s -o /dev/null -w \"/=%{http_code} P1=\" http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} P2=\" http://localhost:3000/projects/nozzle-force-bed-leveling)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/projects/6-axis-robotic-printer)"
+    ]
+  }
+}
