@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -11,22 +12,34 @@ import { academicProjects } from "@/content/academic-projects";
 import { personalProjects } from "@/content/personal-projects";
 import { cn } from "@/lib/utils";
 
-function FeaturedVisual({ label }: { label: string }) {
+function FeaturedVisual({ label, image }: { label: string; image?: string }) {
   return (
-    <div className="noise relative w-full overflow-hidden rounded-2xl bg-surface-2 ring-1 ring-accent/40 aspect-[16/10]">
-      <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
-        <span className="font-mono text-xs md:text-sm uppercase tracking-[0.25em] text-subtle-foreground">
-          {label}
-        </span>
-      </div>
-      <span className="absolute top-4 left-4 w-4 h-px bg-accent/50" />
-      <span className="absolute top-4 left-4 h-4 w-px bg-accent/50" />
-      <span className="absolute top-4 right-4 w-4 h-px bg-accent/50" />
-      <span className="absolute top-4 right-4 h-4 w-px bg-accent/50" />
-      <span className="absolute bottom-4 left-4 w-4 h-px bg-accent/50" />
-      <span className="absolute bottom-4 left-4 h-4 w-px bg-accent/50" />
-      <span className="absolute bottom-4 right-4 w-4 h-px bg-accent/50" />
-      <span className="absolute bottom-4 right-4 h-4 w-px bg-accent/50" />
+    <div className="relative w-full overflow-hidden rounded-2xl ring-1 ring-accent/40 aspect-[16/9]">
+      {image ? (
+        <Image
+          src={image}
+          alt={label}
+          fill
+          sizes="(max-width: 768px) 100vw, 60vw"
+          className="object-cover"
+        />
+      ) : (
+        <div className="noise absolute inset-0 bg-surface-2">
+          <div className="absolute inset-0 flex items-center justify-center px-6 text-center">
+            <span className="font-mono text-xs md:text-sm uppercase tracking-[0.25em] text-subtle-foreground">
+              {label}
+            </span>
+          </div>
+        </div>
+      )}
+      <span className="absolute top-4 left-4 w-4 h-px bg-accent/50 z-10" />
+      <span className="absolute top-4 left-4 h-4 w-px bg-accent/50 z-10" />
+      <span className="absolute top-4 right-4 w-4 h-px bg-accent/50 z-10" />
+      <span className="absolute top-4 right-4 h-4 w-px bg-accent/50 z-10" />
+      <span className="absolute bottom-4 left-4 w-4 h-px bg-accent/50 z-10" />
+      <span className="absolute bottom-4 left-4 h-4 w-px bg-accent/50 z-10" />
+      <span className="absolute bottom-4 right-4 w-4 h-px bg-accent/50 z-10" />
+      <span className="absolute bottom-4 right-4 h-4 w-px bg-accent/50 z-10" />
     </div>
   );
 }
@@ -52,7 +65,7 @@ function FeaturedRow({
           reversed ? "md:order-2" : "md:order-1",
         )}
       >
-        <FeaturedVisual label={project.visualLabel} />
+        <FeaturedVisual label={project.visualLabel} image={project.image} />
       </div>
 
       <div

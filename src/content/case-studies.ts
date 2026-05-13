@@ -18,6 +18,7 @@ export type CaseStudy = {
   heroTitle: string;
   heroSub: string;
   heroVisualLabel: string;
+  heroImage?: string;
   heroMetrics: string[];
   meta: CaseStudyMeta;
   overview: string;
@@ -44,6 +45,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     heroSub:
       "Eliminating a primary source of customer frustration through a fully automated, force-sensitive calibration system.",
     heroVisualLabel: "FORCE-SENSITIVE AUTO BED LEVELING — HERO IMAGE",
+    heroImage: "/images/projects/3d-printer.png",
     heroMetrics: [
       "MANUAL CALIBRATION TIME · ↓ 100%",
       "INTEGRATION COST · MINIMAL",
@@ -119,6 +121,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     heroSub:
       "Building a next-generation printing system from market need to validated prototype.",
     heroVisualLabel: "6-AXIS ROBOTIC 3D PRINTER — HERO IMAGE",
+    heroImage: "/images/projects/6-axis-printer-realistic.png",
     heroMetrics: [
       "0→1 CONCEPT TO PROTOTYPE",
       "CROSS-FUNCTIONAL TEAM LEAD",

@@ -7,6 +7,7 @@ export type FeaturedProject = {
   metrics: string[];
   visualLabel: string;
   href: string;
+  image?: string;
 };
 
 export const featuredProjects: FeaturedProject[] = [
@@ -25,6 +26,7 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     visualLabel: "FORCE-SENSITIVE AUTO BED LEVELING",
     href: "/projects/nozzle-force-bed-leveling",
+    image: "/images/projects/3d-printer.png",
   },
   {
     slug: "6-axis-robotic-printer",
@@ -41,5 +43,6 @@ export const featuredProjects: FeaturedProject[] = [
     ],
     visualLabel: "6-AXIS ROBOTIC 3D PRINTER",
     href: "/projects/6-axis-robotic-printer",
+    image: "/images/projects/6-axis-printer-realistic.png",
   },
 ];

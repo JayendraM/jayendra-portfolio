@@ -58,7 +58,7 @@ export function CaseStudyView({ data }: { data: CaseStudy }) {
           {data.heroSub}
         </p>
         <div className="mt-12">
-          <ImagePlaceholder label={data.heroVisualLabel} aspect="16/9" />
+          <ImagePlaceholder label={data.heroVisualLabel} aspect="16/9" image={data.heroImage} />
         </div>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-3">
           {data.heroMetrics.map((m) => (
