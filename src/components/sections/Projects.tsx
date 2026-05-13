@@ -1,9 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { SectionLabel } from "../ui/SectionLabel";
 import { MetricPill } from "../ui/MetricCard";
 import { ProjectCard } from "../ui/ProjectCard";
@@ -93,14 +91,12 @@ function FeaturedRow({
             <MetricPill key={m}>{m}</MetricPill>
           ))}
         </div>
-        <Link
-          href={project.href}
-          className="inline-flex items-center gap-2 mt-2 font-mono text-xs md:text-sm uppercase tracking-[0.22em] text-foreground hover:text-accent transition-colors group w-fit"
+        <span
+          className="inline-flex items-center mt-2 font-mono text-xs md:text-sm uppercase tracking-[0.22em] text-subtle-foreground cursor-not-allowed select-none w-fit"
+          aria-disabled="true"
         >
-          [ Read case study
-          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-          ]
-        </Link>
+          [ Case study — coming soon ]
+        </span>
       </div>
     </motion.div>
   );
