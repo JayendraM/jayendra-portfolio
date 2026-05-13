@@ -28,6 +28,6 @@ export const travel: TravelEntry[] = [
     id: "bali",
     destination: "Bali, Indonesia",
     caption: "GRADUATION TRIP",
-    image: "/images/travel/bali.jpg",
+    image: "/images/travel/bali-rafting.jpg",
   },
 ];
