@@ -78,17 +78,20 @@ export function Fun() {
         </MarqueeRow>
       </div>
 
-      {/* Travel */}
-      <div className="mx-auto w-full max-w-[1240px] px-6 md:px-10 lg:px-16 pt-16 md:pt-24 pb-32 md:pb-40">
+      {/* Travel heading */}
+      <div className="mx-auto w-full max-w-[1240px] px-6 md:px-10 lg:px-16 pt-16 md:pt-24">
         <h3 className="font-mono text-sm md:text-base uppercase tracking-[0.2em] text-subtle-foreground mb-6">
           RECENT TRAVEL
         </h3>
+      </div>
 
-        <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 md:-mx-10 lg:-mx-16 px-6 md:px-10 lg:px-16">
+      {/* Travel marquee — full bleed */}
+      <div className="w-full pb-32 md:pb-40">
+        <MarqueeRow speed={35}>
           {travel.map((t) => (
             <article
               key={t.id}
-              className="snap-start shrink-0 w-[280px] md:w-[340px] rounded-2xl overflow-hidden border border-border bg-surface-1 card-hover-glow"
+              className="shrink-0 w-[280px] md:w-[340px] rounded-2xl overflow-hidden border border-border bg-surface-1 card-hover-glow"
             >
               <div className="relative w-full aspect-[4/3] overflow-hidden">
                 {t.image ? (
@@ -123,7 +126,7 @@ export function Fun() {
               </div>
             </article>
           ))}
-        </div>
+        </MarqueeRow>
       </div>
     </section>
   );

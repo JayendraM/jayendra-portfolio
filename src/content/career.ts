@@ -19,6 +19,12 @@ export const career: CareerEntry[] = [
     institution: "Aanoor Bagley Coir",
     descriptor:
       "Sustainable agritech manufacturing company specializing in coco peat and coir-based products for global horticulture markets.",
+    bullets: [
+      "Built an AI-driven go-to-market (GTM) strategy using AI-assisted market research, customer segmentation, and data-driven prioritization frameworks — generating ₹8.4M+ in new B2B contracts within 3 months.",
+      "Led a digital transformation of the sales and operations workflow, integrating SaaS tools for CRM, ERP, and supply-chain visibility; cut procurement lead times and vendor cycle times by 50%.",
+      "Owned cross-functional product and operations roadmap across 4 teams — defining KPIs, backlog prioritization, sprint cadences, and stakeholder review cycles; lifted throughput 23% and capacity 41%.",
+      "Expanded into new markets through quality certifications, unlocking high-margin export segments across Europe, Asia, and the US.",
+    ],
   },
   {
     id: "fabheads",
@@ -52,6 +58,11 @@ export const career: CareerEntry[] = [
     institution: "Srivaru Motors",
     descriptor:
       'Startup designing and manufacturing premium electric motorcycles, like the flagship "Prana," focused on sustainable two-wheeler transportation.',
+    bullets: [
+      "Ran data validation studies on battery reliability across temperature and load cycles; built Power BI dashboards surfacing failure-mode patterns used in senior leadership product review meetings.",
+      "Led a defect-reduction initiative by consolidating inspection and root-cause data, cutting recurring assembly defects by 11%.",
+      "Piloted an automation proof-of-concept with cross-functional engineering teams, reducing manual testing effort by 20% and improving operational velocity.",
+    ],
   },
   {
     id: "autovit",

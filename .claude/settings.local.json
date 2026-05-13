@@ -15,7 +15,22 @@
       "Bash(curl -s -o /dev/null -w \"3001=%{http_code}\\\\n\" http://localhost:3001/)",
       "Bash(curl -s -o /dev/null -w \"/=%{http_code} P1=\" http://localhost:3000/)",
       "Bash(curl -s -o /dev/null -w \"%{http_code} P2=\" http://localhost:3000/projects/nozzle-force-bed-leveling)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/projects/6-axis-robotic-printer)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:3000/projects/6-axis-robotic-printer)",
+      "Bash(curl *)",
+      "Bash(findstr /C:\"RECENT TRAVEL\" /C:\"Aanoor\" /C:\"Srivaru\" /C:\"Booth\")",
+      "Bash(findstr \"RECENT Aanoor Srivaru Booth Dean\" C:\\\\Users\\\\jmand\\\\AppData\\\\Local\\\\Temp\\\\portfolio-home.html)",
+      "Bash(findstr /N /O /C:\"RECENT TRAVEL\" \"C:\\\\Users\\\\jmand\\\\.claude\\\\projects\\\\C--Users-jmand-ClaudeCode-Portfolio-Website-jayendra-portfolio\\\\1be066c2-71f9-4a65-b8dc-394c36b974b0\\\\tool-results\\\\btocjzpeu.txt\")",
+      "Bash(findstr /N /O /C:\"Aanoor\" \"C:\\\\Users\\\\jmand\\\\.claude\\\\projects\\\\C--Users-jmand-ClaudeCode-Portfolio-Website-jayendra-portfolio\\\\1be066c2-71f9-4a65-b8dc-394c36b974b0\\\\tool-results\\\\btocjzpeu.txt\")",
+      "Bash(findstr /N /O /C:\"Srivaru\" \"C:\\\\Users\\\\jmand\\\\.claude\\\\projects\\\\C--Users-jmand-ClaudeCode-Portfolio-Website-jayendra-portfolio\\\\1be066c2-71f9-4a65-b8dc-394c36b974b0\\\\tool-results\\\\btocjzpeu.txt\")",
+      "Bash(findstr /N /O /C:\"Booth\" \"C:\\\\Users\\\\jmand\\\\.claude\\\\projects\\\\C--Users-jmand-ClaudeCode-Portfolio-Website-jayendra-portfolio\\\\1be066c2-71f9-4a65-b8dc-394c36b974b0\\\\tool-results\\\\btocjzpeu.txt\")",
+      "Bash(findstr /N /O /C:\"Dean\" \"C:\\\\Users\\\\jmand\\\\.claude\\\\projects\\\\C--Users-jmand-ClaudeCode-Portfolio-Website-jayendra-portfolio\\\\1be066c2-71f9-4a65-b8dc-394c36b974b0\\\\tool-results\\\\btocjzpeu.txt\")",
+      "Bash(powershell *)",
+      "PowerShell(Select-String -Path '.next\\\\dev\\\\logs\\\\next-development.log' -Pattern 'Fun.tsx|career.ts|education.ts' | Select-Object -Last 5 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(400, $_.Line.Length\\)\\) })",
+      "PowerShell(Select-String -Path '.next\\\\dev\\\\logs\\\\next-development.log' -Pattern '\"level\":\"ERROR\"' | Select-Object -Last 3 | ForEach-Object { $_.Line.Substring\\(0, [Math]::Min\\(500, $_.Line.Length\\)\\) })",
+      "PowerShell($lastError = Select-String -Path '.next\\\\dev\\\\logs\\\\next-development.log' -Pattern '\"level\":\"ERROR\"' | Select-Object -Last 1; $lastCompile = Select-String -Path '.next\\\\dev\\\\logs\\\\next-development.log' -Pattern '\"Compiled|Ready in|GET /' | Select-Object -Last 1; \"Last ERROR timestamp: $\\($lastError.Line.Substring\\(14, 12\\)\\)\"; \"Last activity timestamp: $\\($lastCompile.Line.Substring\\(14, 12\\)\\)\")",
+      "PowerShell($logSize = \\(Get-Item '.next\\\\dev\\\\logs\\\\next-development.log'\\).Length; $now = Get-Date; \"Log last write: $\\(\\(Get-Item '.next\\\\dev\\\\logs\\\\next-development.log'\\).LastWriteTime\\)\"; \"Current time:   $now\"; \"Size: $logSize bytes\")",
+      "PowerShell(Get-Process *)",
+      "PowerShell($r = Invoke-WebRequest -Uri http://localhost:3000/ -UseBasicParsing; \"Status: $\\($r.StatusCode\\), Length: $\\($r.RawContentLength\\)\"; $c = $r.Content; foreach \\($t in @\\(\"RECENT TRAVEL\",\"Aanoor\",\"Srivaru\",\"Booth\",\"Dean's Honor\",\"Pursuing business foundations\",\"Built an AI-driven\"\\)\\) { $count = \\([regex]::Matches\\($c, [regex]::Escape\\($t\\)\\)\\).Count; \"$t : $count\" })"
     ]
   }
 }

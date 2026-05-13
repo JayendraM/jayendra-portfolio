@@ -17,7 +17,8 @@ export const education: EducationEntry[] = [
     title: "Master in Management",
     institution: "The University of Chicago Booth School of Business",
     bullets: [
-      "Pursuing business foundations in product strategy, marketing, and operations.",
+      "Dean's Honor List — Fall 2025 and Winter 2026",
+      "Related Coursework — New Product Lab, Building New Venture, Marketing Strategy, Microeconomics, Accounting, Statistics",
     ],
   },
   {
