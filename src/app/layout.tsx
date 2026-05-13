@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import { Toaster } from "sonner";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Jayendra Mandradiar — Mechatronics engineer · Chicago Booth MBA · PM",
@@ -42,6 +43,7 @@ export default function RootLayout({
             },
           }}
         />
+        <Analytics />
       </body>
     </html>
   );
